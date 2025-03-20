@@ -12,6 +12,7 @@ blocks:
         - name: Install dependencies
           commands:
             - checkout
+            - nvm install 18
             - nvm use 18
             - node --version
             - npm ci
@@ -22,6 +23,7 @@ blocks:
         - name: Lint code
           commands:
             - checkout
+            - nvm install 18
             - nvm use 18
             - npm ci
             - npm run lint
@@ -32,6 +34,7 @@ blocks:
         - name: Run tests
           commands:
             - checkout
+            - nvm install 18
             - nvm use 18
             - npm ci
             - npm test
@@ -42,6 +45,7 @@ blocks:
         - name: Build application
           commands:
             - checkout
+            - nvm install 18
             - nvm use 18
             - npm ci
             - npm run build
@@ -52,5 +56,6 @@ blocks:
         - name: Cache build artifacts
           commands:
             - checkout
+            - nvm install 18
             - nvm use 18
             - artifact push job dist --force 
