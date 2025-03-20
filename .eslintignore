@@ -1,0 +1,16 @@
+# Build output
+dist/
+
+# Dependencies
+node_modules/
+
+# Test coverage
+coverage/
+
+# Temporary files
+.tmp/
+*.log
+
+# Generated files
+*.d.ts
+*.js.map 

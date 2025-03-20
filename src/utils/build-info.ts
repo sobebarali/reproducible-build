@@ -24,6 +24,7 @@ export const generateBuildInfo = async (): Promise<BuildInfo> => {
       await fs.access(packageJsonPath);
     } catch (error) {
       // Create fallback data if package.json doesn't exist
+      console.error(`Error accessing package.json: ${error}`);
       return {
         buildId: buildConfig.buildId,
         version: buildConfig.version,

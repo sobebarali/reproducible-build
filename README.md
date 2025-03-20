@@ -14,6 +14,7 @@ This project demonstrates best practices for setting up continuous integration p
 - **Docker Support**: Containerization ready with multi-stage build process
 - **Dependency Locking**: Strict dependency management to prevent "works on my machine" issues
 - **Comprehensive Testing**: Unit, integration, and end-to-end tests
+- **Code Quality**: Enforced through ESLint with modern TypeScript best practices
 
 ## Getting Started
 
@@ -50,6 +51,27 @@ This will:
 1. Clean the output directory
 2. Compile TypeScript files
 3. Generate build metadata in `dist/build-info.json`
+
+### Code Quality
+
+The project uses ESLint to enforce code quality and consistent style:
+
+```bash
+# Run ESLint
+npm run lint
+
+# Run ESLint with auto-fix
+npm run lint:fix
+```
+
+The ESLint configuration enforces:
+
+- Modern JavaScript/TypeScript syntax
+- Functional programming patterns
+- Consistent naming and formatting
+- Type safety (when appropriate)
+
+See `docs/eslint-setup.md` for more details on our linting configuration.
 
 ### Running Tests
 
