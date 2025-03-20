@@ -1,0 +1,56 @@
+version: v1.0
+name: Build Pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+
+blocks:
+  - name: "Setup"
+    task:
+      jobs:
+        - name: Install dependencies
+          commands:
+            - checkout
+            - nvm use 18
+            - node --version
+            - npm ci
+
+  - name: "Lint"
+    task:
+      jobs:
+        - name: Lint code
+          commands:
+            - checkout
+            - nvm use 18
+            - npm ci
+            - npm run lint
+
+  - name: "Test"
+    task:
+      jobs:
+        - name: Run tests
+          commands:
+            - checkout
+            - nvm use 18
+            - npm ci
+            - npm test
+
+  - name: "Build"
+    task:
+      jobs:
+        - name: Build application
+          commands:
+            - checkout
+            - nvm use 18
+            - npm ci
+            - npm run build
+            
+  - name: "Cache Artifacts"
+    task:
+      jobs:
+        - name: Cache build artifacts
+          commands:
+            - checkout
+            - nvm use 18
+            - artifact push job dist --force 
